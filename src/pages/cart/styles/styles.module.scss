@@ -6,7 +6,13 @@
   h2{
     margin-bottom: 5.7rem;
   }
+
+  &_container{
+    display: flex;
+   justify-content: space-between;
+  }
 }
+
 
 .table{
   background-color: #3E1662;
@@ -63,4 +69,38 @@
     font-size: 1.8rem;
     font-weight: 500;
   }
+}
+
+
+
+.cart_total_box{
+  background-color:#3E1662 ;
+  padding: 2.1rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  position: sticky;
+  top: 2rem;
+}
+
+.cart_total_header{
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 1.3rem;
+  border-bottom: 1px solid #623A86;
+
+}
+
+.cart_box_instruction{
+  font-size: 1.6rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #623A86;
+}
+
+.cart_taxes_calculated{
+  padding: 3.7rem 0 ;
 }

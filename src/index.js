@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { OrderContext } from './context/OrderContext';
+import OrderContextProdvider from "./context/OrderContext";
 
 
 
@@ -11,11 +11,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <OrderContext.Provider>
-
   
+ 
+  <OrderContextProdvider>
+
     <App />
-    </OrderContext.Provider>
+
+    </OrderContextProdvider>
+  
   </React.StrictMode>
 );
 

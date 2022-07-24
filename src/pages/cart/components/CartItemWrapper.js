@@ -6,11 +6,8 @@ import styles from '../styles/styles.module.scss';
 const CartItemWrapper = () => {
 
 
- const {orders,setOrders} = useContext(OrderContext)
+ const {orders} = useContext(OrderContext)
 
-   
-
-  
 
   return ( 
 <>
@@ -31,11 +28,7 @@ const CartItemWrapper = () => {
         </div>
         
       </td>
-
       
-       
-     
-
       <td className={styles.table_data}>
         <Counter id={order.id} quantity={order.quantity}/>
       </td>

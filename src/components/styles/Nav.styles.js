@@ -43,6 +43,13 @@ export const NavLink = styled(Link)`
 
   & img{
     width: 2.4rem;
+    -webkit-transition:  all 500ms cubic-bezier(.165, .84, .44, 1);
+    transition: all 500ms cubic-bezier(.165, .84, .44, 1);
+    :hover{
+    transform: translateY(-3px);
+    }
   }
+
+ 
   
  ` 

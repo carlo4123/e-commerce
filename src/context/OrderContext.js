@@ -1,18 +1,27 @@
-import { createContext } from "react";
-
+import { createContext, useEffect, useReducer } from "react";
+import { OrdersReducer } from "../reducer/OrderReducer";
 
 export const OrderContext = createContext()
 
 
-// const [orders,dispatch] = useReducer()
 
+const OrderContextProdvider = ({children}) => {
+  const [orders,dispatch] = useReducer(OrdersReducer,
+    [],
+    ()=>{
+      const localData = localStorage.getItem('orders')
+      return localData ? JSON.parse(localData) : []
+  })
 
-// const OrderContextProdvider = ({children}) => {
-//   return ( 
-//     <OrderContext.Provider value={{orders,setOrder}}>
-//       {children}
-//     </OrderContext.Provider>
-//    );
-// }
+  useEffect(()=>{
+    localStorage.setItem('orders', JSON.stringify(orders))
+  },[orders])
+
+  return ( 
+    <OrderContext.Provider value={{orders,dispatch}}>
+      {children}
+    </OrderContext.Provider>
+   );
+}
  
-// export default OrderContextProdvider;
+export default OrderContextProdvider;

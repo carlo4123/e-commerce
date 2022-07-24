@@ -11,9 +11,10 @@ const Navbar = () => {
           <NavLink to="/">
           home
           </NavLink>
-         
-        <NavLink to="/about">
-          about
+   
+
+          <NavLink to="/products">
+          products
           </NavLink>
          
 
@@ -21,7 +22,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav-right-wrapper">
-        <NavLink to="cart">
+        <NavLink to="cart" >
           <img src={CartIcon} alt="" />
           </NavLink>
         </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import HeroImage from '../../assets/hero-image.png';
 import { Button } from '../../components/styles/Button.styles';
 import { Heading1, Heading2, Paragraph } from '../../components/styles/Heading.styles';
-//import { useCartsContext } from '../../hooks/useCartsContext';
+
 import Card from './components/Card';
 import style from './styles/styles.module.scss';
 
@@ -10,19 +10,20 @@ import style from './styles/styles.module.scss';
 
 
 const Home = () => {
- // const {cart,dispatch} = useCartsContext()
-  const [products, setProducts] = useState(null)
 
+// const {products, dispatch} = useContext(ProductsContext)
+const [products,setProducts] = useState(null)
   useEffect(()=>{
     const fetchProduct = async () =>{
       const response = await fetch('http://localhost:4000/api/products/')
       const json = await response.json()
-
+      console.log("json",json)
       if(response.ok){
+        //dispatch({type: 'SET_PRODUCT', payload: json})
         setProducts(json)
       }
 
-     // dispatch({type: 'SET_CARTS', payload: json})
+   
     }
     fetchProduct()
    
